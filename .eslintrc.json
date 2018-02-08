@@ -1,0 +1,21 @@
+{
+    "env": {
+      "node": true
+    },
+    "extends": "airbnb-base",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "rules": {
+      "quotes": ["error", "double"],
+      "linebreak-style": "off",
+      "no-plusplus": "off",
+      "no-mixed-operators": "off",
+      "no-return-assign": "off",
+      "no-empty": "warn"
+    }
+  }

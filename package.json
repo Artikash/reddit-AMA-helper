@@ -1,0 +1,31 @@
+{
+  "name": "reddit-ama-helper",
+  "version": "1.0.0",
+  "description": "Compiles reddit AMA questions and answers",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artikash/reddit-AMA-helper.git"
+  },
+  "keywords": [
+    "reddit",
+    "bot"
+  ],
+  "author": "Artikash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Artikash/reddit-AMA-helper/issues"
+  },
+  "homepage": "https://github.com/Artikash/reddit-AMA-helper#readme",
+  "dependencies": {
+    "eslint": "^4.17.0",
+    "snoowrap": "^1.15.2"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
