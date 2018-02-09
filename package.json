@@ -22,7 +22,6 @@
   "homepage": "https://github.com/Artikash/reddit-AMA-helper#readme",
   "dependencies": {
     "eslint": "^4.17.0",
-    "snoostorm": "0.0.5",
     "snoowrap": "^1.15.2"
   },
   "devDependencies": {

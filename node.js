@@ -1,13 +1,15 @@
 const Snoowrap = require("snoowrap");
-const Snoostorm = require("snoostorm");
 const reddit = new Snoowrap(require("./secrets"));
 
-const client = new Snoostorm(reddit);
-const stream = client.SubmissionStream(/*{ subreddit: "IAmA" }*/);
-
-stream.on("submission", (post) => {
+reddit.getHot("IAmA", { count: 100 }).forEach((post) => {
   console.log(post);
-  if (post.author);
-  //post.
-  setTimeout(() => stream.emit("stop"), 10000);
+  if (!post.title.search("[AMA Request]")) {
+    console.log("wtf");
+    reddit
+      .getUser(post.author)
+      .getComments()
+      .forEach((comment) => {
+        console.log(comment);
+      });
+  }
 });
