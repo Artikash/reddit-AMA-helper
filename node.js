@@ -17,21 +17,23 @@ reddit.getHot("IAmA").forEach((post) => {
       })
       .then(() => {
         Promise.all(questionPromises.map(question => question.fetch())).then((questions) => {
-          questions.forEach((question) => {
-            if (post.comments.filter(comment => comment.author.name === "AMACompiler").length) {
-              post.comments
-                .filter(comment => comment.author.name === "AMACompiler")[0]
-                .edit(`Question|Score|Answer|Score\n--|--|--|--\n${answers
-                  .map(answer =>
-                    `${format(question)}|${question.score}|${format(answer)}|${answer.score}`)
-                  .join("\n")}`);
-            } else {
-              post.reply(`Question|Score|Answer|Score\n--|--|--|--\n${answers
-                .map(answer =>
-                  `${format(question)}|${question.score}|${format(answer)}|${answer.score}`)
+          if (post.comments.filter(comment => comment.author.name === "AMACompiler").length) {
+            post.comments
+              .filter(comment => comment.author.name === "AMACompiler")[0]
+              .edit(`Question|Score|Answer|Score\n--|--|--|--\n${answers
+                .map((answer, i) =>
+                  `${format(questions[i])}|${questions[i].score}|${format(answer)}|${
+                    answer.score
+                  }`)
                 .join("\n")}`);
-            }
-          });
+          } else {
+            post.reply(`Question|Score|Answer|Score\n--|--|--|--\n${answers
+              .map((answer, i) =>
+                `${format(questions[i])}|${questions[i].score}|${format(answer)}|${
+                  answer.score
+                }`)
+              .join("\n")}`);
+          }
         });
       });
   }
