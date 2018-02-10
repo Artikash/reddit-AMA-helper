@@ -17,6 +17,7 @@
       "global-require": "off",
       "no-mixed-operators": "off",
       "no-return-assign": "off",
+      "no-cond-assign":"off",
       "no-empty": "warn"
     }
   }
